@@ -45,6 +45,26 @@
         <source>Cancelar</source>
         <translation>Annuler</translation>
     </message>
+    <message>
+        <location filename="factura.cpp" line="79"/>
+        <source>Guardar datos</source>
+        <translation>Sauvegarder les données</translation>
+    </message>
+    <message>
+        <location filename="factura.cpp" line="79"/>
+        <source>No se puedo guardar el archivo</source>
+        <translation>Le fichier n&apos;a pas pu être enregistré</translation>
+    </message>
+    <message>
+        <location filename="factura.cpp" line="83"/>
+        <source>Datos</source>
+        <translation>Données</translation>
+    </message>
+    <message>
+        <location filename="factura.cpp" line="84"/>
+        <source>Datos listos para imprimir</source>
+        <translation>Données prêtes à être imprimées</translation>
+    </message>
 </context>
 <context>
     <name>Tienda</name>
@@ -86,6 +106,7 @@
     </message>
     <message>
         <location filename="tienda.ui" line="106"/>
+        <location filename="tienda.cpp" line="18"/>
         <source>Producto</source>
         <translation>Produit</translation>
     </message>
@@ -145,6 +166,46 @@
         <location filename="tienda.ui" line="316"/>
         <source>Total:</source>
         <translation>Total:</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="18"/>
+        <source>Cantidad</source>
+        <translation>Quantité</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="18"/>
+        <source>P. unitario</source>
+        <translation>Prix unitaire</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="18"/>
+        <source>Subtotal</source>
+        <translation>Sous-total</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="44"/>
+        <source>Leche</source>
+        <translation>Lait</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="45"/>
+        <source>Pan</source>
+        <translation>Pain</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="46"/>
+        <source>Queso</source>
+        <translation>Fromage</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="304"/>
+        <source>ADVERTENCIA</source>
+        <translation>AVERTISSEMENT</translation>
+    </message>
+    <message>
+        <location filename="tienda.cpp" line="304"/>
+        <source>Datos importantes incompletos</source>
+        <translation>Données incomplètes importantes</translation>
     </message>
 </context>
 </TS>

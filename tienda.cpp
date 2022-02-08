@@ -15,10 +15,9 @@ Tienda::Tienda(QWidget *parent)
         ui->inProducto->addItem(p->nombre());
     }
     //Configurar cabecera de la tabla
-    QStringList cabecera ={"Cantidad", "Producto", "P. unitario", "Subtotal"};
+    QStringList cabecera ={tr("Cantidad"), tr("Producto"), tr("P. unitario"), tr("Subtotal")};
     ui->outDetalle->setColumnCount(4);
     ui->outDetalle->setHorizontalHeaderLabels(cabecera);
-
     //Establecer subtotal a cero
     m_subtotal=0;
 }
@@ -42,9 +41,9 @@ void Tienda::borrar(char a[])
 void Tienda::cargarProductos()
 {
     //Crear productos quemados en el codigo
-    m_productos.append(new Producto(1, "Leche", 0.80));
-    m_productos.append(new Producto(2, "Pan", 0.15));
-    m_productos.append(new Producto(3, "Queso", 2.50));
+    m_productos.append(new Producto(1, tr("Leche"), 0.80));
+    m_productos.append(new Producto(2, tr("Pan"), 0.15));
+    m_productos.append(new Producto(3, tr("Queso"), 2.50));
 }
 
 void Tienda::calcular(float stProducto)
@@ -57,7 +56,6 @@ void Tienda::calcular(float stProducto)
     ui->outSubtotal->setText("$ " + QString::number(m_subtotal, 'f', 2));
     ui->outIva->setText("$ " + QString::number(m_iva, 'f', 2));
     ui->outTotal->setText("$ " + QString::number(m_total, 'f', 2));
-
 }
 
 QString Tienda::obtenerDatos()
@@ -80,7 +78,8 @@ void Tienda::limpiar()
     ui->inTelefono->setText("");
     ui->inEmail->setText("");
     ui->inDireccion->setPlainText("");
-    //Iniclizar cantidad
+
+    //Inicializar cantidad de productos
     ui->inCantidad->setValue(0);
 
     //Inicializar iva - subtotal - total
@@ -207,6 +206,8 @@ void Tienda::on_btnAgregar_released()
 {
     //Obtener datos de la GUI
     QString cedula = ui->inCedula->text();
+
+    //Transformar el QString cedula a un char
     std::string utf8_text = cedula.toUtf8().constData();
     char buffer[100];
     strcpy(buffer,utf8_text.c_str());
@@ -216,8 +217,10 @@ void Tienda::on_btnAgregar_released()
     if(cantidad==0){
         return;
     }
+
     borrar(buffer);
     bool auxiliar=valcedulaEcuatoriana(buffer);
+
     if(auxiliar){
         //Obtener los datos de la GUI
         //Obtener producto
@@ -247,6 +250,7 @@ void Tienda::on_btnAgregar_released()
         calcular(subtotal);
     }
 }
+
 void Tienda::producto()
 {
     int index = ui->inProducto->currentIndex();
@@ -297,7 +301,7 @@ void Tienda::on_btnFinalizar_released()
     QStringList lista;
     QString productos;
     if(cedula.length() != 10){
-        QMessageBox::warning(this, "ADVERTENCIA", "Datos importantes incompletos");
+        QMessageBox::warning(this, tr("ADVERTENCIA"), tr("Datos importantes incompletos"));
         return;
     }
 

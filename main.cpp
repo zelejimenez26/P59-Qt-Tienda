@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QTranslator traducion;
     // Solicitando al usuario que seleccione un idioma
     QStringList idiomas;
-    idiomas << "Ingles"<<"Frances"<<"Español";
+    idiomas << "Español"<<"Ingles"<<"Frances";
     QString idiomaSeleccionado = QInputDialog::getItem(NULL,
                                                        "Idioma",
                                                        "Seleccione un idioma",

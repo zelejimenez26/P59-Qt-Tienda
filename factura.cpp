@@ -76,8 +76,12 @@ void Factura::on_btnImprimir_clicked()
         //Mostrar por 5 segundos que todo esta bien
         //ui->statusbar->showMessage("Datos alamcenados en " + nombreArchivo, 5000);
     }else{
-        QMessageBox::warning(this,"Guardar datos", "No se puedo guardar el archivo");
+        QMessageBox::warning(this,tr("Guardar datos"), tr("No se puedo guardar el archivo"));
     }
+    //Cuadro de dialogo que informa que la impresion se realizo
+    QMessageBox::information(this,
+                         tr("Datos"),
+                         tr("Datos listos para imprimir"));
     //Cerrar archivo
     directorio.close();
 }
